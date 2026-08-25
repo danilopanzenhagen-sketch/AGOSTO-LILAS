@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Agosto Lilás - Plataforma Completa de Conscientização e Apoio</title>
+    <style>
+        :root {
+            --purple-deep: #210336;
+            --purple-dark: #3b1259;
+            --purple-main: #6c22b6;
+            --purple-light: #9d4edd;
+            --purple-soft: #e0aaff;
+            --lilac-bg: #f5efff;
+            --lilac-card: #fcf9ff;
+            --accent-gold: #ffb703;
+            --accent-red: #d90429;
+            --text-dark: #1d1b20;
+            --text-muted: #524e59;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 35px rgba(59, 18, 89, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #faf7fd;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Fixed Top Banner / Emergency Alert */
+        .top-emergency-bar {
+            background-color: var(--accent-red);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-emergency-bar a {
+            color: var(--accent-gold);
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--purple-deep);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--purple-light), var(--purple-main));
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-soft);
+        }
+
+        .btn-sos {
+            background-color: var(--accent-gold);
+            color: var(--purple-deep) !important;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 700 !important;
+            transition: var(--transition);
+        }
+
+        .btn-sos:hover {
+            transform: scale(1.05);
+            background-color: #ffa200;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--purple-deep) 0%, var(--purple-dark) 50%, var(--purple-main) 100%);
+            color: var(--white);
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: rgba(157, 78, 221, 0.15);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        .hero-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-size: 3.2rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--purple-light);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--purple-main);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid rgba(255, 255, 255, 0.15);
+            object-fit: cover;
+            height: 420px;
+        }
+
+        /* Quick Stats Grid */
+        .stats-section {
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+            padding: 0 2rem;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .stat-box {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border-bottom: 4px solid var(--purple-main);
+            transition: var(--transition);
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--purple-dark);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Global Main Container */
+        .main-container {
+            max-width: 1300px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem auto;
+        }
+
+        .section-header span {
+            color: var(--purple-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            color: var(--purple-deep);
+            margin: 0.5rem 0 1rem 0;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* Section 1: Tipos de Violência (Expanded 6 Grid) */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 2rem;
+            margin-bottom: 5rem;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-img-box {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .card-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .card:hover .card-img-box img {
+            transform: scale(1.08);
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(33, 3, 54, 0.85);
+            backdrop-filter: blur(4px);
+            color: var(--white);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .card-content {
+            padding: 1.8rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            color: var(--purple-dark);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+            font-size: 0.85rem;
+            color: var(--purple-main);
+            font-weight: 600;
+        }
+
+        /* Interactive Tabs Section: Guia de Proteção */
+        .interactive-section {
+            background-color: var(--lilac-bg);
+            border-radius: 24px;
+            padding: 3.5rem 2.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background-color: var(--white);
+            border: 2px solid var(--purple-light);
+            color: var(--purple-dark);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background-color: var(--purple-main);
+            color: var(--white);
+            border-color: var(--purple-main);
+        }
+
+        .tab-content {
+            display: none;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            color: var(--purple-dark);
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
+
+        .tab-content ul {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .tab-content li {
+            background-color: var(--lilac-bg);
+            padding: 1.2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--purple-main);
+            font-size: 0.95rem;
+        }
+
+        /* Timeline Section */
+        .timeline-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+            padding-left: 2rem;
+            border-left: 3px solid var(--purple-light);
+        }
+
+        .timeline-card {
+            position: relative;
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .timeline-card::before {
+            content: "";
+            position: absolute;
+            left: -2.85rem;
+            top: 2rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--purple-main);
+            border: 4px solid var(--white);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            background: var(--purple-deep);
+            color: var(--white);
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .timeline-card h3 {
+            color: var(--purple-dark);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Accordion */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto 5rem auto;
+        }
+
+        .accordion-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--purple-dark);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-header::after {
+            content: "+";
+            font-size: 1.5rem;
+            color: var(--purple-main);
+        }
+
+        .accordion-header.active::after {
+            content: "-";
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+            background-color: var(--white);
+        }
+
+        .accordion-body p {
+            padding-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Emergency Action Banner */
+        .action-banner {
+            background: linear-gradient(135deg, var(--purple-deep), var(--purple-dark));
+            color: var(--white);
+            border-radius: 24px;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .action-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-banner p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            opacity: 0.9;
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .channel-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 2rem 1.5rem;
+            border-radius: 16px;
+            backdrop-filter: blur(8px);
+        }
+
+        .channel-card h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .channel-card strong {
+            font-size: 2.4rem;
+            color: var(--accent-gold);
+            display: block;
+        }
+
+        /* Floating SOS Button for Quick Exit or Call */
+        .floating-sos {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            box-shadow: 0 5px 20px rgba(217, 4, 41, 0.4);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--purple-deep);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 2rem 2rem 2rem;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-content p {
+                margin: 0 auto 2rem auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Emergency Top Notice -->
+    <div class="top-emergency-bar">
+        <span>Em caso de emergência ou agressão em andamento:</span>
+        <a href="tel:190">Ligue 190 (Polícia Militar)</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                Agosto Lilás
+                <span class="logo-badge">Lei Maria da Penha</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#violencias">Tipos de Violência</a></li>
+                <li><a href="#guia">Guia Prático</a></li>
+                <li><a href="#legislacao">Legislação</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+                <li><a href="#canais" class="btn-sos">Ligue 180</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="sobre">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Conscientização, Proteção e Direitos da Mulher.</h1>
+                <p>O Agosto Lilás é a maior campanha nacional dedicada a prevenir e combater a violência doméstica e familiar. Informação e acolhimento salvam vidas.</p>
+                <div class="hero-buttons">
+                    <a href="#canais" class="btn-primary">Buscar Ajuda Agora</a>
+                    <a href="#violencias" class="btn-secondary">Conhecer os Sinais</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Mulheres unidas em apoio recíproco e fortalecimento comunitário">
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Container -->
+    <div class="stats-section">
+        <div class="stats-container">
+            <div class="stat-box">
+                <div class="stat-number">180</div>
+                <div class="stat-desc">Central de Atendimento 24 horas, gratuita e confidencial.</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">11.340</div>
+                <div class="stat-desc">Lei Maria da Penha: Marco jurídico de proteção integral.</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">5 Tipos</div>
+                <div class="stat-desc">De violências catalogadas no Código Penal e Lei de Proteção.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="main-container">
+
+        <!-- Section 1: Types of Violence -->
+        <div class="section-header" id="violencias">
+            <span>Reconhecimento dos Sinais</span>
+            <h2>Modalidades de Violência Doméstica</h2>
+            <p>A violência nem sempre deixa marcas visíveis. A Lei Maria da Penha reconhece cinco formas principais de agressão.</p>
+        </div>
+
+        <section class="cards-grid">
+            
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Física</span>
+                    <img src="https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?auto=format&fit=crop&w=600&q=80" alt="Sinal de pare com a mão estendida">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Física</h3>
+                    <p>Qualquer conduta que ofenda a integridade física ou a saúde corporal da mulher, como empurrões, chutes, tapas, sufocamento ou arremesso de objetos.</p>
+                    <div class="card-footer">Crime previsto na Lei 11.340/2006</div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Psicológica</span>
+                    <img src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&w=600&q=80" alt="Pessoa pensativa olhando através do vidro">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Psicológica</h3>
+                    <p>Causar dano emocional, diminuição da autoestima, manipulação, constrangimento, humilhação, vigilância constante ou isolamento de amigos e familiares.</p>
+                    <div class="card-footer">Tipificada no Art. 147-B do Código Penal</div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Patrimonial</span>
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80" alt="Documentos e itens financeiros sob bloqueio">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Patrimonial</h3>
+                    <p>Retenção, subtração, destruição parcial ou total de objetos pessoais, instrumentos de trabalho, documentos, bens, valores ou recursos financeiros.</p>
+                    <div class="card-footer">Proteção de bens e direito ao trabalho</div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Sexual</span>
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Mãos dadas representando união e apoio">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Sexual</h3>
+                    <p>Presenciar, manter ou participar de relação sexual não desejada mediante intimidação, coerção, uso da força ou negação do uso de métodos contraceptivos.</p>
+                    <div class="card-footer">Garantia sobre a autonomia do corpo</div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Moral</span>
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Anotações e documentos de registro legal">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Moral</h3>
+                    <p>Qualquer conduta que configure calúnia, difamação ou injúria, como espalhar boatos, fazer acusações inverídicas sobre a conduta moral ou expor fotos sem consentimento.</p>
+                    <div class="card-footer">Proteção à honra e imagem pública</div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img-box">
+                    <span class="card-badge">Institucional e Digital</span>
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" alt="Profissional do direito oferecendo consulta e acolhimento">
+                </div>
+                <div class="card-content">
+                    <h3>Violência Digital / Perseguição</h3>
+                    <p>Monitoramento não autorizado de redes sociais, instalação de aplicativos espiões, perseguição online (stalking) e mensagens invasivas de ameaça.</p>
+                    <div class="card-footer">Lei do Stalking (Lei 14.132/2021)</div>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Section 2: Interactive Tabs / Guia de Ação -->
+        <section class="interactive-section" id="guia">
+            <div class="section-header">
+                <span>Orientação Passo a Passo</span>
+                <h2>Como Agir em Diferentes Situações</h2>
+                <p>Confira as etapas recomendadas para garantia da integridade e busca de suporte institucional.</p>
+            </div>
+
+            <div class="tabs-wrapper">
+                <button class="tab-btn active" onclick="switchTab(event, 'tab1')">Em Situação de Risco</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab2')">Para Amigos e Familiares</button>
+                <button class="tab-btn" onclick="switchTab(event, 'tab3')">Medidas Protetivas</button>
+            </div>
+
+            <div id="tab1" class="tab-content active">
+                <h3>Passos para quem precisa de ajuda imediata:</h3>
+                <ul>
+                    <li><strong>1. Priorize sua Segurança:</strong> Procure um local seguro (casa de parentes, amigos ou local público de acolhimento).</li>
+                    <li><strong>2. Acione os Canais Oficiais:</strong> Ligue 180 para orientações ou 190 para emergência policial imediata.</li>
+                    <li><strong>3. Guarde Evidências:</strong> Mantenha prints de conversas, áudios, fotos de lesões ou registros de chamadas.</li>
+                    <li><strong>4. Procure a DEAM ou Delegacia:</strong> Registre o Boletim de Ocorrência e peça a aplicação de Medida Protetiva de Urgência.</li>
+                </ul>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <h3>Como apoiar alguém que está sofrendo violência:</h3>
+                <ul>
+                    <li><strong>1. Escute sem Julgamentos:</strong> Evite culpar a vítima ou questionar suas decisões imediatas.</li>
+                    <li><strong>2. Mantenha o Sigilo:</strong> Não exponha a situação para não colocar a vítima em maior perigo.</li>
+                    <li><strong>3. Ofereça Suporte Prático:</strong> Ajude a guardar documentos importantes em local seguro fora do domicílio.</li>
+                    <li><strong>4. Denuncie Anonimamente:</strong> Você pode ligar 180 para relatar o caso sem se identificar.</li>
+                </ul>
+            </div>
+
+            <div id="tab3" class="tab-content">
+                <h3>Entenda as Medidas Protetivas de Urgência:</h3>
+                <ul>
+                    <li><strong>O que são:</strong> Ordens concedidas pelo juiz para afastar o agressor e garantir a segurança física da mulher.</li>
+                    <li><strong>Afastamento do Lar:</strong> O agressor é obrigado a sair da residência comum.</li>
+                    <li><strong>Proibição de Aproximação:</strong> Limite mínimo de distância mantido entre o agressor e a vítima/familiares.</li>
+                    <li><strong>Prazo de Análise:</strong> Devem ser apreciadas pelo juiz no prazo máximo de 48 horas após o pedido.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: Timeline of Legislative Achievements -->
+        <div class="section-header" id="legislacao">
+            <span>Marcos Históricos</span>
+            <h2>Avanços na Legislação Brasileira</h2>
+            <p>Conheça os principais marcos legais construídos para a garantia dos direitos das mulheres.</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-card">
+                <span class="timeline-year">2006</span>
+                <h3>Lei Maria da Penha (Lei nº 11.340)</h3>
+                <p>Criou mecanismos específicos para coibir a violência doméstica, eliminando penas alternativas (como cestas básicas) para os agressores.</p>
+            </div>
+
+            <div class="timeline-card">
+                <span class="timeline-year">2015</span>
+                <h3>Lei do Feminicídio (Lei nº 13.104)</h3>
+                <p>Incluiu o feminicídio como circunstância qualificadora do crime de homicídio e o enquadrou no rol dos crimes hediondos.</p>
+            </div>
+
+            <div class="timeline-card">
+                <span class="timeline-year">2018</span>
+                <h3>Criminalização do Importunação Sexual</h3>
+                <p>Tipificação do crime de importunação sexual (Lei nº 13.718), cobrindo atos libidinosos praticados sem anuência em locais públicos.</p>
+            </div>
+
+            <div class="timeline-card">
+                <span class="timeline-year">2021</span>
+                <h3>Tipo Penal de Violência Psicológica e Stalking</h3>
+                <p>Inclusão explícita da violência psicológica contra a mulher e do crime de perseguição (stalking) no Código Penal.</p>
+            </div>
+        </div>
+
+        <!-- Section 4: FAQ Accordion -->
+        <div class="section-header" id="faq">
+            <span>Esclarecimentos</span>
+            <h2>Perguntas Frequentes</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">A denúncia pelo Ligue 180 é realmente anônima?</button>
+                <div class="accordion-body">
+                    <p>Sim. O atendimento na Central 180 é gratuito, confidencial e garante o anonimato do denunciante em qualquer região do Brasil.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">É necessário ter marcas físicas para fazer o Boletim de Ocorrência?</button>
+                <div class="accordion-body">
+                    <p>Não. A violência psicológica, moral, patrimonial e ameaças também constituem crimes de violência doméstica e podem ser registradas em delegacia.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">Preciso de advogado para solicitar uma Medida Protetiva?</button>
+                <div class="accordion-body">
+                    <p>Não é obrigatório. A solicitação pode ser feita diretamente na Delegacia de Polícia no momento do B.O. ou com o apoio da Defensoria Pública.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header" onclick="toggleAccordion(this)">O que fazer se a Medida Protetiva for descumprida pelo agressor?</button>
+                <div class="accordion-body">
+                    <p>O descumprimento de medida protetiva é crime (Art. 24-A da Lei 11.340). Acione imediatamente a Polícia Militar pelo 190 para prisão em flagrante.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Emergency Action / Contact Banner -->
+        <section class="action-banner" id="canais">
+            <h2>Canais Oficiais de Atendimento</h2>
+            <p>Se você precisa de ajuda, orientação ou quer realizar uma denúncia, utilize os serviços gratuitos e permanentes abaixo:</p>
+
+            <div class="channel-grid">
+                <div class="channel-card">
+                    <h4>Atendimento à Mulher</h4>
+                    <strong>180</strong>
+                    <p>Orientação, denúncia e apoio 24 horas.</p>
+                </div>
+                <div class="channel-card">
+                    <h4>Polícia Militar (Urgência)</h4>
+                    <strong>190</strong>
+                    <p>Para casos de agressão em andamento.</p>
+                </div>
+                <div class="channel-card">
+                    <h4>Direitos Humanos</h4>
+                    <strong>100</strong>
+                    <p>Denúncias de violações de direitos.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Floating Quick Call SOS -->
+    <a href="tel:180" class="floating-sos">
+        <span>LIGUE 180</span>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Agosto Lilás</h4>
+                <p>Plataforma educativa e informativa voltada ao fortalecimento da rede de proteção das mulheres e difusão de direitos legais.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="#sobre">Sobre a Campanha</a></li>
+                    <li><a href="#violencias">Tipos de Violência</a></li>
+                    <li><a href="#guia">Guia Prático</a></li>
+                    <li><a href="#legislacao">Legislação</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Órgãos de Proteção</h4>
+                <ul>
+                    <li><a href="#">Delegacia da Mulher (DEAM)</a></li>
+                    <li><a href="#">Defensoria Pública</a></li>
+                    <li><a href="#">Centro de Referência (CREAS)</a></li>
+                    <li><a href="#">Ministério Público</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Segurança da Informação</h4>
+                <p>Se estiver em perigo de monitoramento, limpe o histórico deste navegador ao concluir a leitura.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; Campanha de Conscientização - Agosto Lilás. Pela vida e integridade de todas as mulheres.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Interactive Tabs Logic
+        function switchTab(evt, tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Accordion FAQ Logic
+        function toggleAccordion(header) {
+            header.classList.toggle('active');
+            const body = header.nextElementSibling;
+            
+            if (body.style.maxHeight) {
+                body.style.maxHeight = null;
+            } else {
+                body.style.maxHeight = body.scrollHeight + "px";
+            }
+        }
+    </script>
+</body>
+</html>
